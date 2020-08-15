@@ -6,6 +6,5 @@ export const styles = StyleSheet.create({
     paddingBottom: 20,
     flex: 1,
   },
-  scrollContainer: {
-  },
+  scrollContainer: {},
 });
