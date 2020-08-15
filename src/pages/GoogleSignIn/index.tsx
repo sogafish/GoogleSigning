@@ -1,12 +1,14 @@
 import React, { memo, useEffect } from 'react';
 import { ScrollView, SafeAreaView } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import {
   GoogleSignin,
   GoogleSigninButton,
 } from '@react-native-community/google-signin';
 import { styles } from './styles';
+import { GoogleSignInResult } from '../names';
 
-export const GoogleSignIn = memo(function GoogleSignIn() {
+export const GoogleSignIn = memo(function GoogleSignIn({ navigation }: { navigation: StackNavigationProp }) {
   useEffect(() => {
     GoogleSignin.configure({
       scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
@@ -22,9 +24,10 @@ export const GoogleSignIn = memo(function GoogleSignIn() {
   }, []);
 
   const onPress = React.useCallback(async () => {
-    await GoogleSignin.hasPlayServices();
-    const userInfo = await GoogleSignin.signIn();
-    console.log(userInfo);
+    // await GoogleSignin.hasPlayServices();
+    // const userInfo = await GoogleSignin.signIn();
+    // console.log(userInfo);
+    navigation.navigate(GoogleSignInResult);
   }, []);
 
   return (
