@@ -1,1 +1,1 @@
-export const hoge = {};
+export const actions = {};

@@ -7,17 +7,25 @@ import { Stack } from './navigator';
 function App(): React.Component {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={Names.GoogleSignIn}>
+      <Stack.Navigator
+        initialRouteName={Names.GoogleSignIn}
+      >
         <Stack.Screen name={Names.GoogleSignIn}>
-          {props => <GoogleSignIn {...props} extraData={{}} options={{ title: 'Home' }}/>}
+          {(props) => (
+            <GoogleSignIn
+              {...props}
+              extraData={{}}
+              options={{ title: 'Home' }}
+            />
+          )}
         </Stack.Screen>
         <Stack.Screen
-          name={Names.GoogleSignInResult} 
+          name={Names.GoogleSignInResult}
           component={GoogleSignInResult}
         />
       </Stack.Navigator>
     </NavigationContainer>
-  )
-};
+  );
+}
 
 export default App;
