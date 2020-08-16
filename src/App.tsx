@@ -10,14 +10,10 @@ function App(): React.Component {
       <Stack.Navigator
         initialRouteName={Names.GoogleSignIn}
       >
-        <Stack.Screen name={Names.GoogleSignIn}>
-          {(props) => (
-            <GoogleSignIn
-              {...props}
-              extraData={{}}
-              options={{ title: 'Home' }}
-            />
-          )}
+        <Stack.Screen
+          name={Names.GoogleSignIn}
+          options={{ headerShown: false }}>
+          {(props) => <GoogleSignIn {...props} extraData={{}} />}
         </Stack.Screen>
         <Stack.Screen
           name={Names.GoogleSignInResult}
